@@ -1,0 +1,479 @@
+/* Core design tokens for colors, spacing, and shared styling values. */
+:root {
+    --bg: #0b1220;
+    --bg-soft: #111a2b;
+    --panel: rgba(17, 26, 43, 0.88);
+    --panel-strong: #16233a;
+    --border: rgba(160, 185, 218, 0.18);
+    --text: #f4f7fb;
+    --muted: #adc0df;
+    --accent: #6ee7c8;
+    --accent-strong: #34d6ae;
+    --shadow: 0 20px 45px rgba(0, 0, 0, 0.28);
+    --max-width: 1120px;
+    --radius: 24px;
+}
+
+/* Base reset and typography rules used across the whole page. */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: "Source Sans 3", "Segoe UI", sans-serif;
+    color: var(--text);
+    background:
+        radial-gradient(circle at top left, rgba(52, 214, 174, 0.14), transparent 30%),
+        radial-gradient(circle at 85% 15%, rgba(110, 231, 200, 0.08), transparent 25%),
+        linear-gradient(180deg, #09101b 0%, #0b1220 45%, #0f1728 100%);
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+h1,
+h2,
+h3 {
+    margin: 0;
+    font-family: "Outfit", "Trebuchet MS", sans-serif;
+    line-height: 1.1;
+}
+
+p {
+    margin: 0;
+}
+
+.container {
+    width: min(calc(100% - 2rem), var(--max-width));
+    margin: 0 auto;
+}
+
+.section {
+    padding: 6rem 0;
+}
+
+.section-alt {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0));
+}
+
+/* Header and navigation styling for desktop and mobile layouts. */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(18px);
+    background: rgba(6, 10, 18, 0.74);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.nav-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 4.75rem;
+    gap: 1rem;
+}
+
+.brand {
+    font-family: "Outfit", "Trebuchet MS", sans-serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    color: var(--muted);
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover,
+.nav-links a:focus-visible {
+    color: var(--text);
+}
+
+.nav-toggle {
+    display: none;
+    width: 3rem;
+    height: 3rem;
+    padding: 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: transparent;
+    cursor: pointer;
+}
+
+.nav-toggle span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    margin: 0.18rem 0;
+    background: var(--text);
+    border-radius: 999px;
+}
+
+/* Hero and shared content card styling for the main sections. */
+.hero {
+    padding-top: 7.5rem;
+    min-height: calc(100vh - 4.75rem);
+    display: flex;
+    align-items: center;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.3fr) minmax(280px, 0.8fr);
+    gap: 2rem;
+    align-items: center;
+}
+
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    color: var(--accent);
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    font-size: clamp(2.8rem, 5vw, 4.9rem);
+    max-width: 10ch;
+}
+
+.hero-text {
+    max-width: 60ch;
+    margin-top: 1.5rem;
+    color: var(--muted);
+    font-size: 1.15rem;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 3.25rem;
+    padding: 0 1.4rem;
+    border-radius: 999px;
+    font-weight: 700;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.button:hover,
+.button:focus-visible {
+    transform: translateY(-2px);
+}
+
+.button-primary {
+    background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+    color: #062018;
+    box-shadow: 0 14px 24px rgba(52, 214, 174, 0.22);
+}
+
+.button-secondary {
+    border: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.hero-card,
+.content-card,
+.skill-card,
+.project-card,
+.contact-panel {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--panel);
+    box-shadow: var(--shadow);
+}
+
+.hero-card {
+    padding: 2rem;
+}
+
+.profile-badge {
+    display: inline-flex;
+    margin-bottom: 1rem;
+    padding: 0.45rem 0.8rem;
+    border-radius: 999px;
+    background: rgba(110, 231, 200, 0.1);
+    color: var(--accent);
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.hero-card h2 {
+    margin-bottom: 1rem;
+    font-size: 1.65rem;
+}
+
+.highlight-list {
+    display: grid;
+    gap: 1rem;
+}
+
+.highlight-list li {
+    position: relative;
+    padding-left: 1.35rem;
+    color: var(--muted);
+}
+
+.highlight-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.62rem;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background: var(--accent);
+}
+
+.section-heading {
+    margin-bottom: 2rem;
+}
+
+.section-heading h2 {
+    max-width: 16ch;
+    font-size: clamp(2rem, 3vw, 3rem);
+}
+
+.section-layout {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+.content-card {
+    padding: 2rem;
+    display: grid;
+    gap: 1.2rem;
+    color: var(--muted);
+}
+
+/* Grid-based section layouts for skills and project cards. */
+.skills-grid,
+.projects-grid {
+    display: grid;
+    gap: 1.35rem;
+}
+
+.skills-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.projects-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.skill-card,
+.project-card {
+    padding: 1.6rem;
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.skill-card:hover,
+.project-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(110, 231, 200, 0.35);
+}
+
+.skill-card h3,
+.project-card h3 {
+    margin-bottom: 0.65rem;
+    font-size: 1.35rem;
+}
+
+.skill-card p,
+.project-card p,
+.contact-panel p {
+    color: var(--muted);
+}
+
+.project-tag {
+    display: inline-flex;
+    margin-bottom: 0.9rem;
+    padding: 0.45rem 0.8rem;
+    border-radius: 999px;
+    background: rgba(110, 231, 200, 0.08);
+    color: var(--accent);
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.contact-panel {
+    padding: 3rem;
+    text-align: center;
+}
+
+.contact-panel h2 {
+    margin-bottom: 1rem;
+    font-size: clamp(2rem, 3vw, 3rem);
+}
+
+.contact-link {
+    display: inline-flex;
+    margin-top: 1.5rem;
+    color: var(--accent);
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.site-footer {
+    padding: 1.5rem 0 2rem;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    color: var(--muted);
+    font-size: 0.95rem;
+}
+
+.footer-content a:hover,
+.footer-content a:focus-visible {
+    color: var(--text);
+}
+
+/* Small scroll-in animation for sections as they enter the viewport. */
+.reveal {
+    opacity: 0;
+    transform: translateY(22px);
+    transition:
+        opacity 0.6s ease,
+        transform 0.6s ease;
+}
+
+.reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Tablet layout adjustments. */
+@media (max-width: 960px) {
+    .hero-grid,
+    .section-layout,
+    .skills-grid,
+    .projects-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .hero-grid,
+    .section-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .section-heading h2,
+    .hero h1 {
+        max-width: none;
+    }
+}
+
+/* Mobile navigation and single-column stacking rules. */
+@media (max-width: 720px) {
+    .section {
+        padding: 4.75rem 0;
+    }
+
+    .nav-toggle {
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .navbar {
+        position: relative;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: calc(100% + 0.75rem);
+        right: 0;
+        width: min(18rem, calc(100vw - 2rem));
+        padding: 1rem;
+        border: 1px solid var(--border);
+        border-radius: 1.25rem;
+        background: rgba(9, 16, 27, 0.96);
+        box-shadow: var(--shadow);
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links.is-open {
+        display: flex;
+    }
+
+    .hero {
+        min-height: auto;
+        padding-top: 6.5rem;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .button {
+        width: 100%;
+    }
+
+    .skills-grid,
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-panel {
+        padding: 2.25rem 1.5rem;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}

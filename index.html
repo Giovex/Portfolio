@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giorgio Di Pietro | Portfolio Diplomato in Informatica</title>
+    <meta
+        name="description"
+        data-i18n-content="meta-description"
+        content="Portfolio personale di Giorgio Di Pietro, diplomato in Informatica, con competenze, progetti e contatti."
+    >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Source+Sans+3:wght@400;500;600&display=swap"
+        rel="stylesheet"
+    >
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Main site header with navigation for all portfolio sections -->
+    <header class="site-header" id="top">
+        <div class="container nav-wrapper">
+            <a class="brand" href="#home" data-i18n="brand">Giorgio Di Pietro</a>
+
+            <button
+                class="nav-toggle"
+                type="button"
+                aria-expanded="false"
+                aria-controls="primary-navigation"
+                aria-label="Apri il menu di navigazione"
+                data-i18n-aria-label="menu-toggle-label"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="navbar" aria-label="Navigazione principale" data-i18n-aria-label="nav-aria-label">
+                <ul class="nav-links" id="primary-navigation">
+                    <li><a href="#home" data-i18n="nav-home">Inizio</a></li>
+                    <li><a href="#about" data-i18n="nav-about">Chi Sono</a></li>
+                    <li><a href="#skills" data-i18n="nav-skills">Competenze</a></li>
+                    <li><a href="#projects" data-i18n="nav-projects">Progetti</a></li>
+                    <li><a href="#contact" data-i18n="nav-contact">Contatti</a></li>
+                    <li><a href="#" id="language-toggle" aria-label="Passa alla versione in inglese">EN</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero section introducing the student and their focus -->
+        <section class="hero section" id="home">
+            <div class="container hero-grid">
+                <div class="hero-copy reveal">
+                    <p class="eyebrow" data-i18n="hero-eyebrow">Diplomato in Informatica</p>
+                    <h1 data-i18n="hero-title">Costruisco competenze digitali con progetti pratici e apprendimento continuo.</h1>
+                    <p class="hero-text" data-i18n="hero-text">
+                        Ciao, sono Giorgio, diplomato in Informatica. Mi sto concentrando su sviluppo web,
+                        programmazione e database, mettendo in pratica cio che imparo attraverso progetti concreti.
+                    </p>
+                    <div class="hero-actions">
+                        <a class="button button-primary" href="#projects" data-i18n="hero-projects-button">Vedi Progetti</a>
+                        <a class="button button-secondary" href="#contact" data-i18n="hero-contact-button">Contattami</a>
+                    </div>
+                </div>
+
+                <aside class="hero-card reveal" aria-label="Panoramica rapida del profilo" data-i18n-aria-label="hero-card-aria-label">
+                    <div class="profile-badge" data-i18n="hero-badge">Disponibile per stage</div>
+                    <h2 data-i18n="hero-card-title">Panoramica Rapida</h2>
+                    <ul class="highlight-list">
+                        <li data-i18n="hero-highlight-1">Attenzione alle basi del front-end e al codice pulito</li>
+                        <li data-i18n="hero-highlight-2">Approfondisco la programmazione con C, Java e Python</li>
+                        <li data-i18n="hero-highlight-3">Interesse per database, sviluppo software e lavoro in team</li>
+                    </ul>
+                </aside>
+            </div>
+        </section>
+
+        <!-- About section describing background, mindset, and goals -->
+        <section class="section section-alt" id="about">
+            <div class="container section-layout">
+                <div class="section-heading reveal">
+                    <p class="eyebrow" data-i18n="about-eyebrow">Chi Sono</p>
+                    <h2 data-i18n="about-title">Motivato, concreto e pronto a crescere nel settore IT.</h2>
+                </div>
+                <div class="content-card reveal">
+                    <p data-i18n="about-paragraph-1">
+                        Sono un diplomato in Informatica con interesse per lo sviluppo software e le tecnologie web.
+                        Durante il mio percorso di studi ho acquisito basi solide di programmazione, database e reti.
+                    </p>
+                    <p data-i18n="about-paragraph-2">
+                        Mi piace trasformare idee in soluzioni semplici e funzionali, migliorando costantemente le mie
+                        competenze tecniche. Attualmente sono alla ricerca di opportunita per crescere professionalmente
+                        nel settore IT e in contesti affini.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills section showing the student's current technical toolkit -->
+        <section class="section" id="skills">
+            <div class="container">
+                <div class="section-heading reveal">
+                    <p class="eyebrow" data-i18n="skills-eyebrow">Competenze</p>
+                    <h2 data-i18n="skills-title">Tecnologie che studio e utilizzo.</h2>
+                </div>
+
+                <div class="skills-grid">
+                    <article class="skill-card reveal">
+                        <h3>HTML</h3>
+                        <p data-i18n="skill-html">Strutturo pagine web semantiche, chiare e accessibili.</p>
+                    </article>
+                    <article class="skill-card reveal">
+                        <h3>CSS</h3>
+                        <p data-i18n="skill-css">Realizzo layout responsive con attenzione a spaziature, ordine visivo e design moderno.</p>
+                    </article>
+                    <article class="skill-card reveal">
+                        <h3>JavaScript</h3>
+                        <p data-i18n="skill-javascript">Aggiungo interattivita e logiche dinamiche di base con JavaScript vanilla.</p>
+                    </article>
+                    <article class="skill-card reveal">
+                        <h3>SQL</h3>
+                        <p data-i18n="skill-sql">Lavoro con query, tabelle e concetti fondamentali di gestione dei dati.</p>
+                    </article>
+                    <article class="skill-card reveal">
+                        <h3>C</h3>
+                        <p data-i18n="skill-c">Esercito la logica di programmazione e la comprensione dei concetti piu vicini al basso livello.</p>
+                    </article>
+                    <article class="skill-card reveal">
+                        <h3>Java</h3>
+                        <p data-i18n="skill-java">Approfondisco la programmazione a oggetti e la struttura delle applicazioni.</p>
+                    </article>
+                    <article class="skill-card reveal">
+                        <h3>Python</h3>
+                        <p data-i18n="skill-python">Sviluppo script e soluzioni leggibili per esercizi, automazione e problem solving.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects section with placeholder cards that can be replaced later -->
+        <section class="section section-alt" id="projects">
+            <div class="container">
+                <div class="section-heading reveal">
+                    <p class="eyebrow" data-i18n="projects-eyebrow">Progetti</p>
+                    <h2 data-i18n="projects-title">Alcuni progetti rappresentativi del mio percorso.</h2>
+                </div>
+
+                <div class="projects-grid">
+                    <article class="project-card reveal">
+                        <div class="project-tag" data-i18n="project-tag-web">Sviluppo Web</div>
+                        <h3 data-i18n="project-title-web">Mini Sito Web</h3>
+                        <p data-i18n="project-description-web">
+                            Un semplice progetto web realizzato per esercitarmi con HTML, CSS e JavaScript,
+                            con un'interfaccia chiara, moderna e responsive.
+                        </p>
+                    </article>
+
+                    <article class="project-card reveal">
+                        <div class="project-tag" data-i18n="project-tag-programming">Programmazione</div>
+                        <h3 data-i18n="project-title-programming">Programma Base Gestionale</h3>
+                        <p data-i18n="project-description-programming">
+                            Un programma base sviluppato per gestire dati e operazioni essenziali, utile per
+                            allenare logica, input/output e organizzazione del codice.
+                        </p>
+                    </article>
+
+                    <article class="project-card reveal">
+                        <div class="project-tag" data-i18n="project-tag-database">Database</div>
+                        <h3 data-i18n="project-title-database">Database Studenti e Corsi</h3>
+                        <p data-i18n="project-description-database">
+                            Un progetto database dedicato alla gestione di studenti e corsi, con tabelle relazionali
+                            e query SQL per inserimento, aggiornamento e consultazione dei dati.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact section with a simple way to reach out -->
+        <section class="section" id="contact">
+            <div class="container contact-panel reveal">
+                <p class="eyebrow" data-i18n="contact-eyebrow">Contatti</p>
+                <h2 data-i18n="contact-title">Restiamo in contatto.</h2>
+                <p data-i18n="contact-text">
+                    Sono aperto a opportunita di stage, collaborazioni e ruoli junior nel settore IT.
+                </p>
+                <a class="contact-link" href="mailto:giorgiodipietro05@gmail.com">giorgiodipietro05@gmail.com</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer with a small closing note -->
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <p>&copy; <span id="current-year"></span> <span data-i18n="footer-rights">Giorgio Di Pietro. Tutti i diritti riservati.</span></p>
+            <a href="#top" data-i18n="footer-top-link">Torna su</a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
